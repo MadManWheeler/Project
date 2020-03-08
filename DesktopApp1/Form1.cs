@@ -10,15 +10,20 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Newtonsoft.Json;
+using System.Collections;
+using System.Data.SqlClient;
 
 
 namespace DesktopApp1
 {
+
+
     public partial class Form1 : Form
     {
         public static string[] passingTxt = new string[9];
         public static string[] label1 = new string[9];
         public static string[] METHOD = new string[9];
+        SqlConnection con = new SqlConnection("Data Source=DESKTOP-DIEA2PE;Initial Catalog = Project; Integrated Security = True");
 
         public Form1()
         {
@@ -178,18 +183,53 @@ namespace DesktopApp1
         private void button3_Click(object sender, EventArgs e)
         {
             
-            string[] array = new string[] { "Chicken", "Pork", "Fish", "Beef", "Lamb"};
+            //string[] array = new string[];
+            //List<Student> list = new List<Student>();
+            //List<string> listING = new List;
+            List<string> listING = new List<string>();
+            con.Open();
+            string Query2 = "SELECT Type FROM Ingredients WHERE got = '1';";
+            DataTable dt = new DataTable();
+            SqlDataAdapter SDA = new SqlDataAdapter(Query2, con);
+            SDA.SelectCommand.ExecuteNonQuery();
+            SDA.Fill(dt);
+            con.Close();
+            foreach (DataRow dr in dt.Rows)
+            {
+
+                listING.Add((dr["Type"].ToString()));
+                int i = 0;
+                
+                //array[i] = (dr["Type"].ToString());
+                i++;
+            }
 
             for (int i = 0; i < 9; i++)
             {
 
                 Random rnd = new Random();
-                int ingr = rnd.Next(1, 5);
+                Random rnd2 = new Random();
+                int ingr = 0;
+                int ingr2 = 0;
+                bool ranCheck = false;
+                while (ranCheck == false)
+                {
+                    ingr = rnd.Next(0, listING.Count);
+                    ingr2 = rnd.Next(0, listING.Count);
+
+                    if (ingr != ingr2)
+                    {
+                        ranCheck = true;
+                    }
+
+                }
+
+                
                 //int r = rnd.Next(Ingrediendts.listING.Count);
 
 
                 //string apiGet = string.Format("https://api.edamam.com/search?q=" + array[ingr] + Ingrediendts.listING[r] + "&app_id=32d7bc80&app_key=3ce2b8743eff32886ac3d5aa53ba1bec");
-                string apiGet = string.Format("https://api.edamam.com/search?q=" + array[ingr] + "&soyaapp_id=32d7bc80&app_key=3ce2b8743eff32886ac3d5aa53ba1bec");
+                string apiGet = string.Format("https://api.edamam.com/search?q=" + listING[ingr] +"+"+ listING[ingr2] + "&soyaapp_id=32d7bc80&app_key=3ce2b8743eff32886ac3d5aa53ba1bec");
                 WebRequest requestObjGet = WebRequest.Create(apiGet);
                 requestObjGet.Method = "GET";
                 HttpWebResponse responceObjGet = null;

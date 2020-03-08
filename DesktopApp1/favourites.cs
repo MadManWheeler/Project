@@ -177,12 +177,38 @@ namespace DesktopApp1
                 using (SqlDataReader sdr = cmd.ExecuteReader())
                 {
                     sdr.Read();
-                    richTextBox1.Text = sdr["Ingredients"].ToString();
+                    richTextBox1.Text = sdr["Ingredients"].ToString().ToLower();
                     linkLabel1.Text = sdr["Method"].ToString();
                     
                 }
+            
                 con.Close();
             }
+
+
+            con.Open();
+            string Query = "SELECT Type FROM Ingredients;";
+            DataTable dt = new DataTable();
+            SqlDataAdapter SDA = new SqlDataAdapter(Query, con);
+            SDA.SelectCommand.ExecuteNonQuery();
+            SDA.Fill(dt);
+
+            int check = 0;
+            foreach (DataRow dr in dt.Rows)
+            {
+                if (richTextBox1.Text.Contains((dr["Type"].ToString())))
+                {
+                    
+                    check++;
+
+                }
+            }
+
+            int numLines = richTextBox1.Text.Split('\n').Length - 1;
+            MessageBox.Show(check.ToString()+"/"+numLines);
+            con.Close();
+
+            
 
         }
 
