@@ -33,12 +33,11 @@ namespace DesktopApp1
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
             this.reccomended1 = new DesktopApp1.Reccomended();
             this.new1 = new DesktopApp1.New();
             this.ingrediendts1 = new DesktopApp1.Ingrediendts();
             this.favourites1 = new DesktopApp1.favourites();
-            this.metroToggle1 = new MetroFramework.Controls.MetroToggle();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.metroPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -103,23 +102,35 @@ namespace DesktopApp1
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.Color.Transparent;
+            this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button5.Location = new System.Drawing.Point(12, 12);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(111, 102);
+            this.button5.TabIndex = 17;
+            this.button5.Text = "button5";
+            this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click_1);
+            // 
             // reccomended1
             // 
-            this.reccomended1.Location = new System.Drawing.Point(220, 12);
+            this.reccomended1.Location = new System.Drawing.Point(209, 4);
             this.reccomended1.Name = "reccomended1";
             this.reccomended1.Size = new System.Drawing.Size(685, 563);
             this.reccomended1.TabIndex = 16;
             // 
             // new1
             // 
-            this.new1.Location = new System.Drawing.Point(220, 1);
+            this.new1.Location = new System.Drawing.Point(209, 4);
             this.new1.Name = "new1";
             this.new1.Size = new System.Drawing.Size(685, 583);
             this.new1.TabIndex = 15;
             // 
             // ingrediendts1
             // 
-            this.ingrediendts1.Location = new System.Drawing.Point(205, 12);
+            this.ingrediendts1.Location = new System.Drawing.Point(209, 4);
             this.ingrediendts1.Name = "ingrediendts1";
             this.ingrediendts1.Size = new System.Drawing.Size(685, 583);
             this.ingrediendts1.TabIndex = 14;
@@ -127,31 +138,11 @@ namespace DesktopApp1
             // 
             // favourites1
             // 
-            this.favourites1.Location = new System.Drawing.Point(208, 12);
+            this.favourites1.Location = new System.Drawing.Point(209, 4);
             this.favourites1.Name = "favourites1";
-            this.favourites1.Size = new System.Drawing.Size(685, 563);
+            this.favourites1.Size = new System.Drawing.Size(685, 583);
             this.favourites1.TabIndex = 13;
             this.favourites1.Load += new System.EventHandler(this.favourites1_Load);
-            // 
-            // metroToggle1
-            // 
-            this.metroToggle1.AutoSize = true;
-            this.metroToggle1.Location = new System.Drawing.Point(36, 92);
-            this.metroToggle1.Name = "metroToggle1";
-            this.metroToggle1.Size = new System.Drawing.Size(80, 17);
-            this.metroToggle1.TabIndex = 11;
-            this.metroToggle1.Text = "Off";
-            this.metroToggle1.UseVisualStyleBackColor = true;
-            this.metroToggle1.CheckedChanged += new System.EventHandler(this.metroToggle1_CheckedChanged);
-            // 
-            // richTextBox1
-            // 
-            this.richTextBox1.Location = new System.Drawing.Point(16, 124);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(100, 96);
-            this.richTextBox1.TabIndex = 12;
-            this.richTextBox1.Text = "plz hide me im scared";
-            this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
             // 
             // Form1
             // 
@@ -160,20 +151,19 @@ namespace DesktopApp1
             this.BackColor = System.Drawing.Color.White;
             this.CausesValidation = false;
             this.ClientSize = new System.Drawing.Size(902, 587);
-            this.Controls.Add(this.reccomended1);
-            this.Controls.Add(this.new1);
+            this.Controls.Add(this.button5);
+            this.Controls.Add(this.metroPanel1);
             this.Controls.Add(this.ingrediendts1);
             this.Controls.Add(this.favourites1);
-            this.Controls.Add(this.richTextBox1);
-            this.Controls.Add(this.metroToggle1);
-            this.Controls.Add(this.metroPanel1);
+            this.Controls.Add(this.reccomended1);
+            this.Controls.Add(this.new1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.metroPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -188,8 +178,7 @@ namespace DesktopApp1
         private Ingrediendts ingrediendts1;
         private New new1;
         private Reccomended reccomended1;
-        private MetroFramework.Controls.MetroToggle metroToggle1;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.Button button5;
     }
 }
 

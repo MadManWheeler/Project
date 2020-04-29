@@ -167,5 +167,10 @@ namespace DesktopApp1
 
             con.Close();
         }
+
+        private void Ingrediendts_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

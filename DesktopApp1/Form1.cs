@@ -33,14 +33,14 @@ namespace DesktopApp1
             new1.Hide();
             reccomended1.Hide();
 
-           
-    }
-        
+
+        }
+
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+
         }
-        
+
         private void button4_Click(object sender, EventArgs e)
         {
 
@@ -51,7 +51,7 @@ namespace DesktopApp1
 
         }
 
-        
+
 
         private void metroLabel1_Click(object sender, EventArgs e)
         {
@@ -65,7 +65,7 @@ namespace DesktopApp1
 
         private void metroToggle1_CheckedChanged(object sender, EventArgs e)
         {
-            
+
 
         }
 
@@ -73,7 +73,7 @@ namespace DesktopApp1
         {
 
         }
-        
+
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -108,7 +108,7 @@ namespace DesktopApp1
         //remove
         public class Person
         {
-            public string q { get; set; } 
+            public string q { get; set; }
             public System.Collections.ObjectModel.Collection<hit> hits { get; set; }
 
         }
@@ -125,11 +125,11 @@ namespace DesktopApp1
             try
             {
                 var jPerson = JsonConvert.DeserializeObject<dynamic>(strJSON);
-                
+
                 // Person jPerson = JsonConvert.DeserializeObject<dynamic>(strJSON);
                 string ignlist = null;
 
-                
+
 
                 //for (int i = 0; i < jPerson.hits[2].recipe.ingredientLines.Length; i++)
                 int counter = 0;
@@ -137,7 +137,7 @@ namespace DesktopApp1
                 {
                     int i = 0;
                     bool x = true;
-                    
+
                     bool y = false;
 
                     while (x == true)
@@ -166,9 +166,9 @@ namespace DesktopApp1
                 }
 
 
-                
-                 
-                
+
+
+
 
 
             }
@@ -179,10 +179,10 @@ namespace DesktopApp1
 
             }
         }
-            
+
         private void button3_Click(object sender, EventArgs e)
         {
-            
+
             //string[] array = new string[];
             //List<Student> list = new List<Student>();
             //List<string> listING = new List;
@@ -199,7 +199,7 @@ namespace DesktopApp1
 
                 listING.Add((dr["Type"].ToString()));
                 int i = 0;
-                
+
                 //array[i] = (dr["Type"].ToString());
                 i++;
             }
@@ -224,12 +224,12 @@ namespace DesktopApp1
 
                 }
 
-                
+
                 //int r = rnd.Next(Ingrediendts.listING.Count);
 
 
                 //string apiGet = string.Format("https://api.edamam.com/search?q=" + array[ingr] + Ingrediendts.listING[r] + "&app_id=32d7bc80&app_key=3ce2b8743eff32886ac3d5aa53ba1bec");
-                string apiGet = string.Format("https://api.edamam.com/search?q=" + listING[ingr] +"+"+ listING[ingr2] + "&soyaapp_id=32d7bc80&app_key=3ce2b8743eff32886ac3d5aa53ba1bec");
+                string apiGet = string.Format("https://api.edamam.com/search?q=" + listING[ingr] + "+" + listING[ingr2] + "&app_id=32d7bc80&app_key=3ce2b8743eff32886ac3d5aa53ba1bec"/*+randomnumber*/);
                 WebRequest requestObjGet = WebRequest.Create(apiGet);
                 requestObjGet.Method = "GET";
                 HttpWebResponse responceObjGet = null;
@@ -257,11 +257,85 @@ namespace DesktopApp1
             ingrediendts1.Hide();
             favourites1.Hide();
             new1.Show();
+
             reccomended1.Hide();
 
 
+
+
+
+        }
+
+        private void ALGI ()
+        {
+
+            /* pick random meat/fish
+             * 
+             * sleect random most frequent cuisine (top weighted)
+             * 
+             * most used ingredients in that cusine cross check with your ingredients
+             * 
+             * pull 20+ recipes and check what you have most ingredients for 
+             * 
+             * order from most to least*/
+
+
+            List<string> listING = new List<string>();
+            con.Open();
+            string Query2 = "SELECT Type FROM Ingredients WHERE got = '1';";
+            DataTable dt = new DataTable();
+            SqlDataAdapter SDA = new SqlDataAdapter(Query2, con);
+            SDA.SelectCommand.ExecuteNonQuery();
+            SDA.Fill(dt);
+            con.Close();
+            foreach (DataRow dr in dt.Rows)
+            {
+
+                listING.Add((dr["Type"].ToString()));
+                int i = 0;
+
+                //array[i] = (dr["Type"].ToString());
+                i++;
+            }
+
             
-             
+            string curItem = Properties.Settings.Default.Cuisines;
+
+
+            String[] spearator = { " ", " " };
+            Int32 count = 20;
+            string[] aExclude = new string[5];
+            aExclude = curItem.Split(spearator, count, StringSplitOptions.RemoveEmptyEntries);
+
+            Random rnd3 = new Random();
+            Random rnd4 = new Random();
+            int RanMeatFish = 0;
+            int RanCuisines = 0;
+
+            RanMeatFish = rnd3.Next(0, listING.Count);
+            RanCuisines = rnd4.Next(0, aExclude.Length);
+
+            con.Open();
+            string Query = "SELECT Type FROM Ingredients WHERE FoodCategory = 'Meats' OR 'Fish/Seafood' AND" + "id = '" + RanMeatFish + "'AND got = '1';";
+            DataTable dt = new DataTable();
+            SqlDataAdapter SDA = new SqlDataAdapter(Query, con);
+            SDA.SelectCommand.ExecuteNonQuery();
+            SDA.Fill(dt);
+
+            
+            
+
+
+        }
+
+        private void button5_Click_1(object sender, EventArgs e)
+        {
+            Settings f2 = new Settings();
+            f2.ShowDialog(); 
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
 
         }
     }

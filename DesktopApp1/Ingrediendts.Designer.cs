@@ -116,6 +116,7 @@
             this.Controls.Add(this.label1);
             this.Name = "Ingrediendts";
             this.Size = new System.Drawing.Size(685, 583);
+            this.Load += new System.EventHandler(this.Ingrediendts_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -32,5 +32,53 @@ namespace DesktopApp1.Properties {
                 return ((string)(this["ProjectConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string Exclude {
+            get {
+                return ((string)(this["Exclude"]));
+            }
+            set {
+                this["Exclude"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string Cuisines {
+            get {
+                return ((string)(this["Cuisines"]));
+            }
+            set {
+                this["Cuisines"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string Alergies {
+            get {
+                return ((string)(this["Alergies"]));
+            }
+            set {
+                this["Alergies"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string Diet {
+            get {
+                return ((string)(this["Diet"]));
+            }
+            set {
+                this["Diet"] = value;
+            }
+        }
     }
 }

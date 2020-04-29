@@ -24,6 +24,9 @@ namespace DesktopApp1
         public favourites()
         {
             InitializeComponent();
+            listBox1.Items.Clear();
+
+            
             RefreshDB();
 
 
@@ -116,7 +119,7 @@ namespace DesktopApp1
         
         private void favourites_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
@@ -136,7 +139,7 @@ namespace DesktopApp1
 
         private void button3_Click(object sender, EventArgs e)
         {
-            con.Open();
+            /*con.Open();
 
             for (int i = 0; i < 9; i++)
             { 
@@ -145,7 +148,10 @@ namespace DesktopApp1
                 SqlDataAdapter SDA = new SqlDataAdapter(Query, con);
                 SDA.SelectCommand.ExecuteNonQuery();
             }
-            con.Close();
+            con.Close();*/
+            RefreshDB();
+
+            
 
         }
 

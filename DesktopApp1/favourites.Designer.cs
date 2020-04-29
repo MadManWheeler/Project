@@ -96,16 +96,16 @@
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(120, 52);
             this.button3.TabIndex = 6;
-            this.button3.Text = "Add to database";
+            this.button3.Text = "Update";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(436, 58);
+            this.listBox1.Location = new System.Drawing.Point(396, 58);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(246, 381);
+            this.listBox1.Size = new System.Drawing.Size(286, 381);
             this.listBox1.TabIndex = 11;
             this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
@@ -113,7 +113,7 @@
             // 
             this.richTextBox1.Location = new System.Drawing.Point(0, 58);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(416, 381);
+            this.richTextBox1.Size = new System.Drawing.Size(390, 381);
             this.richTextBox1.TabIndex = 12;
             this.richTextBox1.Text = "";
             // 
