@@ -19,7 +19,7 @@ namespace DesktopApp1
             InitializeComponent();
             string curItem = Properties.Settings.Default.Cuisines;
 
-
+            textBox2.Text = Properties.Settings.Default.Email;
             String[] spearator = { " ", " " };
             Int32 count = 20;
             string[] aExclude = new string[5];
@@ -169,9 +169,12 @@ namespace DesktopApp1
             MessageBox.Show(strselecteditems.ToString());
             Properties.Settings.Default.Save();
 
-
-
             
+            Properties.Settings.Default.Email = textBox2.Text;
+            
+            Properties.Settings.Default.Save();
+
+
             //add try catch
 
             //add try catch here

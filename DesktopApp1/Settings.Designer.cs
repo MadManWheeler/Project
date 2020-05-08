@@ -41,6 +41,8 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -51,24 +53,25 @@
             // 
             this.listBox1.FormattingEnabled = true;
             this.listBox1.Items.AddRange(new object[] {
+            "None",
             "Dairy",
             "Eggs",
             "Nuts",
             "Seafood",
             "Soy",
             "Wheat"});
-            this.listBox1.Location = new System.Drawing.Point(19, 19);
+            this.listBox1.Location = new System.Drawing.Point(19, 16);
             this.listBox1.Name = "listBox1";
             this.listBox1.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
-            this.listBox1.Size = new System.Drawing.Size(200, 82);
+            this.listBox1.Size = new System.Drawing.Size(200, 95);
             this.listBox1.TabIndex = 0;
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.listBox1);
-            this.groupBox1.Location = new System.Drawing.Point(563, 37);
+            this.groupBox1.Location = new System.Drawing.Point(563, 47);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(225, 110);
+            this.groupBox1.Size = new System.Drawing.Size(225, 117);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Alergies";
@@ -116,9 +119,9 @@
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.listBox3);
-            this.groupBox3.Location = new System.Drawing.Point(563, 153);
+            this.groupBox3.Location = new System.Drawing.Point(563, 170);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(225, 109);
+            this.groupBox3.Size = new System.Drawing.Size(225, 119);
             this.groupBox3.TabIndex = 3;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Diet";
@@ -128,16 +131,16 @@
             // 
             this.listBox3.FormattingEnabled = true;
             this.listBox3.Items.AddRange(new object[] {
+            "None",
             "Balanced",
             "High-Protein",
             "High-Fiber",
             "Low-Fat",
             "Low-Carb",
             "Low-Sodium"});
-            this.listBox3.Location = new System.Drawing.Point(25, 19);
+            this.listBox3.Location = new System.Drawing.Point(13, 18);
             this.listBox3.Name = "listBox3";
-            this.listBox3.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
-            this.listBox3.Size = new System.Drawing.Size(200, 82);
+            this.listBox3.Size = new System.Drawing.Size(206, 95);
             this.listBox3.TabIndex = 0;
             // 
             // groupBox4
@@ -208,11 +211,29 @@
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(57, 374);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Email:";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(60, 390);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(280, 20);
+            this.textBox2.TabIndex = 7;
+            // 
             // Settings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.groupBox4);
@@ -228,6 +249,7 @@
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -246,5 +268,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox textBox2;
     }
 }

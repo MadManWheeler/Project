@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using System.Collections;
 using System.Data.SqlClient;
 using System.Diagnostics;
+using System.Net;
+using System.Net.Mail;
 
 namespace DesktopApp1
 {
@@ -47,6 +49,7 @@ namespace DesktopApp1
             foreach (DataRow dr in dt.Rows)
             {
                 listBox1.Items.Add(dr["label"].ToString());
+                
             }
 
             con.Close();
@@ -193,23 +196,60 @@ namespace DesktopApp1
 
 
             con.Open();
-            string Query = "SELECT Type FROM Ingredients;";
+            string Query = "SELECT Type FROM Ingredients WHERE got = '1';";
             DataTable dt = new DataTable();
             SqlDataAdapter SDA = new SqlDataAdapter(Query, con);
             SDA.SelectCommand.ExecuteNonQuery();
             SDA.Fill(dt);
-
+            string TBE = richTextBox1.Text;
+   
             int check = 0;
+            List<string> result = richTextBox1.Text.Split('\n').ToList();
             foreach (DataRow dr in dt.Rows)
             {
-                if (richTextBox1.Text.Contains((dr["Type"].ToString())))
+            
+                for (int counter = 0; result.Count != counter; counter++)
                 {
                     
-                    check++;
+                    if (result[counter].Contains((dr["Type"].ToString())))
+                    {
+                        result[counter] = "";
+                        
+                        check++;
+                    }
+                  
+                    
+                }
+                
+            }
+            StringBuilder sendM = new StringBuilder();
+            foreach (string value in result)
+            {
+                
+                sendM.Append(value);
+                sendM.Append("\n");
+            }
+            
+            DialogResult d;
+            d = MessageBox.Show(sendM.ToString(), "Send missing ingredients to phone?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (d == DialogResult.Yes)
+            {
+                SmtpClient email = new SmtpClient("smtp.gmail.com", 587);
+                email.EnableSsl = true;
+                email.Credentials = new NetworkCredential("reciperecommenddmu@gmail.com", "7CTV!#&L\"V&LhLwr");//7CTV!#&L"V&LhLwr
+
+                try
+                {
+                    email.Send("reciperecommenddmu@gmail.com", Properties.Settings.Default.Email, "Missing Ingredients", sendM.ToString());
 
                 }
+                catch
+                {
+                    MessageBox.Show("Please go to settings and add a valid email.");
+                }
+                
             }
-
+           
             int numLines = richTextBox1.Text.Split('\n').Length - 1;
             MessageBox.Show(check.ToString()+"/"+numLines);
             con.Close();
@@ -248,6 +288,11 @@ namespace DesktopApp1
         {
             ProcessStartInfo Info = new ProcessStartInfo(linkLabel1.Text);
             Process.Start(Info);
+        }
+
+        private void richTextBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
     

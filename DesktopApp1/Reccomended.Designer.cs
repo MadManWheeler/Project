@@ -66,6 +66,7 @@
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.newLabel1 = new MetroFramework.Controls.MetroLabel();
+            this.button11 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -204,6 +205,7 @@
             this.button1.TabIndex = 228;
             this.button1.Text = "Add";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // checkBox7
             // 
@@ -466,10 +468,21 @@
             this.newLabel1.TabIndex = 192;
             this.newLabel1.Text = "Recipe 1";
             // 
+            // button11
+            // 
+            this.button11.Location = new System.Drawing.Point(607, 3);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(75, 23);
+            this.button11.TabIndex = 104;
+            this.button11.Text = "Refresh";
+            this.button11.UseVisualStyleBackColor = true;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
+            // 
             // Reccomended
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.button11);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
             this.Name = "Reccomended";
@@ -521,5 +534,6 @@
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private MetroFramework.Controls.MetroLabel newLabel1;
+        private System.Windows.Forms.Button button11;
     }
 }

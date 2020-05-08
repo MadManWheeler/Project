@@ -15,6 +15,30 @@ namespace DesktopApp1
         public Reccomended()
         {
             InitializeComponent();
+
+            if (Visible == true)
+            {
+                richTextBox1.Text = Form1.passingTxt[0];
+                newLabel1.Text = Form1.label1[0];
+                richTextBox2.Text = Form1.passingTxt[1];
+                newLabel2.Text = Form1.label1[1];
+                richTextBox3.Text = Form1.passingTxt[2];
+                newLabel3.Text = Form1.label1[2];
+                richTextBox4.Text = Form1.passingTxt[3];
+                newLabel4.Text = Form1.label1[3];
+                richTextBox5.Text = Form1.passingTxt[4];
+                newLabel5.Text = Form1.label1[4];
+                richTextBox6.Text = Form1.passingTxt[5];
+                newLabel6.Text = Form1.label1[5];
+                richTextBox7.Text = Form1.passingTxt[6];
+                newLabel7.Text = Form1.label1[6];
+                richTextBox8.Text = Form1.passingTxt[7];
+                newLabel8.Text = Form1.label1[7];
+                richTextBox9.Text = Form1.passingTxt[8];
+                newLabel9.Text = Form1.label1[8];
+
+            }
+
         }
 
         private void Reccomended_Load(object sender, EventArgs e)
@@ -245,6 +269,33 @@ namespace DesktopApp1
         private void newLabel1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            richTextBox1.Text = Form1.passingTxt[0];
+            newLabel1.Text = Form1.label1[0];
+            richTextBox2.Text = Form1.passingTxt[1];
+            newLabel2.Text = Form1.label1[1];
+            richTextBox3.Text = Form1.passingTxt[2];
+            newLabel3.Text = Form1.label1[2];
+            richTextBox4.Text = Form1.passingTxt[3];
+            newLabel4.Text = Form1.label1[3];
+            richTextBox5.Text = Form1.passingTxt[4];
+            newLabel5.Text = Form1.label1[4];
+            richTextBox6.Text = Form1.passingTxt[5];
+            newLabel6.Text = Form1.label1[5];
+            richTextBox7.Text = Form1.passingTxt[6];
+            newLabel7.Text = Form1.label1[6];
+            richTextBox8.Text = Form1.passingTxt[7];
+            newLabel8.Text = Form1.label1[7];
+            richTextBox9.Text = Form1.passingTxt[8];
+            newLabel9.Text = Form1.label1[8];
         }
     }
 }

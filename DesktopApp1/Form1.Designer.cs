@@ -34,10 +34,10 @@ namespace DesktopApp1
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
-            this.reccomended1 = new DesktopApp1.Reccomended();
-            this.new1 = new DesktopApp1.New();
             this.ingrediendts1 = new DesktopApp1.Ingrediendts();
             this.favourites1 = new DesktopApp1.favourites();
+            this.reccomended1 = new DesktopApp1.Reccomended();
+            this.new1 = new DesktopApp1.New();
             this.metroPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -106,27 +106,14 @@ namespace DesktopApp1
             // 
             this.button5.BackColor = System.Drawing.Color.Transparent;
             this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.Location = new System.Drawing.Point(12, 12);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(111, 102);
+            this.button5.Size = new System.Drawing.Size(138, 75);
             this.button5.TabIndex = 17;
-            this.button5.Text = "button5";
+            this.button5.Text = "Preferences";
             this.button5.UseVisualStyleBackColor = false;
             this.button5.Click += new System.EventHandler(this.button5_Click_1);
-            // 
-            // reccomended1
-            // 
-            this.reccomended1.Location = new System.Drawing.Point(209, 4);
-            this.reccomended1.Name = "reccomended1";
-            this.reccomended1.Size = new System.Drawing.Size(685, 563);
-            this.reccomended1.TabIndex = 16;
-            // 
-            // new1
-            // 
-            this.new1.Location = new System.Drawing.Point(209, 4);
-            this.new1.Name = "new1";
-            this.new1.Size = new System.Drawing.Size(685, 583);
-            this.new1.TabIndex = 15;
             // 
             // ingrediendts1
             // 
@@ -143,6 +130,20 @@ namespace DesktopApp1
             this.favourites1.Size = new System.Drawing.Size(685, 583);
             this.favourites1.TabIndex = 13;
             this.favourites1.Load += new System.EventHandler(this.favourites1_Load);
+            // 
+            // reccomended1
+            // 
+            this.reccomended1.Location = new System.Drawing.Point(209, 4);
+            this.reccomended1.Name = "reccomended1";
+            this.reccomended1.Size = new System.Drawing.Size(685, 563);
+            this.reccomended1.TabIndex = 16;
+            // 
+            // new1
+            // 
+            this.new1.Location = new System.Drawing.Point(209, 4);
+            this.new1.Name = "new1";
+            this.new1.Size = new System.Drawing.Size(685, 583);
+            this.new1.TabIndex = 15;
             // 
             // Form1
             // 
