@@ -21,9 +21,12 @@ namespace DesktopApp1
 
     public partial class Form1 : Form
     {
-        public static string[] passingTxt = new string[9];
-        public static string[] label1 = new string[9];
-        public static string[] METHOD = new string[9];
+        public static string[] checkMethod = new string[20];
+        public static string[] checkLabel = new string[20];
+
+        public static string[] passingTxt = new string[20];
+        public static string[] label1 = new string[20];
+        public static string[] METHOD = new string[20];
         public static string[] ingr = { "", "" };
         SqlConnection con = new SqlConnection("Data Source=DESKTOP-DIEA2PE;Initial Catalog = Project; Integrated Security = True");
 
@@ -88,7 +91,7 @@ namespace DesktopApp1
         private void button2_Click(object sender, EventArgs e)
         {
             algorithmIngredients();
-
+        /*
 
             List<string> listING = new List<string>();
             con.Open();
@@ -112,14 +115,15 @@ namespace DesktopApp1
             for (int i = 0; i < 20; i++)
             {
 
-             }   
+            }   
 
 
                 //int r = rnd.Next(Ingrediendts.listING.Count);
 
-
+                
                 //string apiGet = string.Format("https://api.edamam.com/search?q=" + array[ingr] + Ingrediendts.listING[r] + "&app_id=32d7bc80&app_key=3ce2b8743eff32886ac3d5aa53ba1bec");
-                string apiGet = string.Format("https://api.edamam.com/search?q=" + ingr[0] + "+" + ingr[1] + "&app_id=32d7bc80&app_key=3ce2b8743eff32886ac3d5aa53ba1bec"/*+randomnumber*/);
+                
+                string apiGet = string.Format("https://api.edamam.com/search?q=" + ingr[0] + "+" + ingr[1] + "&app_id=32d7bc80&app_key=3ce2b8743eff32886ac3d5aa53ba1bec"/*+randomnumber);
                 WebRequest requestObjGet = WebRequest.Create(apiGet);
                 requestObjGet.Method = "GET";
                 HttpWebResponse responceObjGet = null;
@@ -134,8 +138,10 @@ namespace DesktopApp1
                 }
 
                 deserialiseJSON(strresulttest);
-                //order from most ingredients to least the print
 
+            */
+                //order from most ingredients to least the print
+                
 
             
 
@@ -189,7 +195,7 @@ namespace DesktopApp1
 
                 //for (int i = 0; i < jPerson.hits[2].recipe.ingredientLines.Length; i++)
                 int counter = 0;
-                for (int Rnumber = 0; Rnumber < 9; Rnumber++)
+                for (int Rnumber = 0; Rnumber < 20; Rnumber++)
                 {
                     int i = 0;
                     bool x = true;
@@ -201,6 +207,8 @@ namespace DesktopApp1
                         try
                         {
                             //buffer set of list to order on % of ingredients
+                           
+
                             ignlist = ignlist + "\n" + jPerson.hits[Rnumber].recipe.ingredientLines[i];
                             label1[Rnumber] = jPerson.hits[Rnumber].recipe.label;
                             METHOD[Rnumber] = jPerson.hits[Rnumber].recipe.url;
@@ -209,7 +217,7 @@ namespace DesktopApp1
                         catch
                         {
                             y = true;
-                            while (counter < 9 && y == true)
+                            while (counter < 20 && y == true)
                             {
                                 passingTxt[counter] = ignlist;
                                 ignlist = null;
@@ -222,7 +230,7 @@ namespace DesktopApp1
                     }
                 }
 
-
+                orderAPI();
 
 
 
@@ -235,6 +243,11 @@ namespace DesktopApp1
                 //put in error throw 
 
             }
+        }
+
+        private void orderAPI()
+        {
+
         }
 
         private void button3_Click(object sender, EventArgs e)
