@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.projectDataSet = new DesktopApp1.ProjectDataSet();
             this.recipesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.recipesTableAdapter = new DesktopApp1.ProjectDataSetTableAdapters.RecipesTableAdapter();
@@ -56,16 +55,6 @@
             this.label1.Text = "Favourites";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(242, 508);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(120, 52);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Add Label";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // projectDataSet
             // 
             this.projectDataSet.DataSetName = "ProjectDataSet";
@@ -82,7 +71,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(436, 508);
+            this.button2.Location = new System.Drawing.Point(411, 480);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(120, 52);
             this.button2.TabIndex = 5;
@@ -92,7 +81,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(562, 508);
+            this.button3.Location = new System.Drawing.Point(537, 480);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(120, 52);
             this.button3.TabIndex = 6;
@@ -124,10 +113,8 @@
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.Location = new System.Drawing.Point(6, 480);
             this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(55, 13);
+            this.linkLabel1.Size = new System.Drawing.Size(0, 13);
             this.linkLabel1.TabIndex = 13;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "linkLabel1";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // label2
@@ -135,9 +122,9 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(6, 458);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(62, 13);
+            this.label2.Size = new System.Drawing.Size(65, 13);
             this.label2.TabIndex = 14;
-            this.label2.Text = "Method link";
+            this.label2.Text = "Method link:";
             // 
             // favourites
             // 
@@ -150,7 +137,6 @@
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button1);
             this.Name = "favourites";
             this.Size = new System.Drawing.Size(685, 563);
             this.Load += new System.EventHandler(this.favourites_Load);
@@ -164,7 +150,6 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.BindingSource recipesBindingSource;
         private ProjectDataSet projectDataSet;
         private ProjectDataSetTableAdapters.RecipesTableAdapter recipesTableAdapter;

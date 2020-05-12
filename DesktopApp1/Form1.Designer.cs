@@ -87,7 +87,7 @@ namespace DesktopApp1
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(183, 78);
             this.button2.TabIndex = 3;
-            this.button2.Text = "Reccomended";
+            this.button2.Text = "Recommended";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -161,7 +161,7 @@ namespace DesktopApp1
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "Recipe Recommend";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.metroPanel1.ResumeLayout(false);
             this.ResumeLayout(false);

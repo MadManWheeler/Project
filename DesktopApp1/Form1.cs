@@ -238,7 +238,7 @@ namespace DesktopApp1
 
             }
 
-            catch (Exception ex)
+            catch 
             {
                 //put in error throw 
 
@@ -274,7 +274,7 @@ namespace DesktopApp1
                 i++;
             }
 
-           // for (int i = 0; i < 9; i++)
+            //for (int i = 0; i < 9; i++)
             
 
                 Random rnd = new Random();
@@ -316,10 +316,10 @@ namespace DesktopApp1
                 deserialiseJSON(strresulttest);
                 //use json to pick random recipe
 
-            
-            
 
 
+
+            
 
 
 

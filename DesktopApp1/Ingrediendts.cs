@@ -60,9 +60,24 @@ namespace DesktopApp1
                 }
                 
             }
+            listBox1.Items.Clear();
+            refreshLB();
+
+
+            string Query = "SELECT Type FROM Ingredients WHERE FoodCategory =" + "'" + listBox2.SelectedItem.ToString() + "'AND got = 0;";
+            DataTable dt = new DataTable();
+            SqlDataAdapter SDA = new SqlDataAdapter(Query, con);
+            SDA.SelectCommand.ExecuteNonQuery();
+            SDA.Fill(dt);
+
+            foreach (DataRow dr in dt.Rows)
+            {
+                listBox1.Items.Add(dr["Type"].ToString());
+            }
+
 
             //string Query = "UPDATE Ingredients SET got = '1' WHERE Type = " + "'" + listBox1.SelectedItem.ToString() + "';";
-            refreshLB();
+
 
             con.Close();
 
