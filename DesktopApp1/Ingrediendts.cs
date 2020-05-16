@@ -32,49 +32,45 @@ namespace DesktopApp1
         private void button1_Click(object sender, EventArgs e)
         {
             //fix this ugly code
-            // string getText1 = comboBox1.SelectedItem.ToString();
-            // string getText2 = comboBox2.SelectedItem.ToString();
-            //string getText3 = comboBox3.SelectedItem.ToString();
-            //string getText4 = comboBox4.SelectedItem.ToString();
-            //string getText5 = comboBox5.SelectedItem.ToString();
 
-            //listBox1.Items.Add(getText1);
-            //listBox1.Items.Add(getText2);
-            // listBox1.Items.Add(getText3);
-            //listBox1.Items.Add(getText4);
-            //listBox1.Items.Add(getText5);
+            
+            if (listBox1.SelectedItem == null) { MessageBox.Show("Please select an ingredient");}
 
-            con.Open();
-            listBox3.Items.Clear();
-            using (SqlCommand cmd = new SqlCommand("UPDATE Ingredients SET got = '1' WHERE Type = " + "'" + listBox1.SelectedItem.ToString() + "';"))
+            else
             {
-                cmd.CommandType = CommandType.Text;
-                cmd.Connection = con;
-                
-                using (SqlDataReader sdr = cmd.ExecuteReader())
+                con.Open();
+                listBox3.Items.Clear();
+                using (SqlCommand cmd = new SqlCommand("UPDATE Ingredients SET got = '1' WHERE Type = " + "'" + listBox1.SelectedItem.ToString() + "';"))
                 {
-                    sdr.Read();
-                    //richTextBox1.Text = sdr["Ingredients"].ToString();
-                    //linkLabel1.Text = sdr["Method"].ToString();
+                    cmd.CommandType = CommandType.Text;
+                    cmd.Connection = con;
+
+                    using (SqlDataReader sdr = cmd.ExecuteReader())
+                    {
+                        sdr.Read();
+                        //richTextBox1.Text = sdr["Ingredients"].ToString();
+                        //linkLabel1.Text = sdr["Method"].ToString();
+
+                    }
 
                 }
-                
+                listBox1.Items.Clear();
+                refreshLB();
+
+
+                string Query = "SELECT Type FROM Ingredients WHERE FoodCategory =" + "'" + listBox2.SelectedItem.ToString() + "'AND got = 0;";
+                DataTable dt = new DataTable();
+                SqlDataAdapter SDA = new SqlDataAdapter(Query, con);
+                SDA.SelectCommand.ExecuteNonQuery();
+                SDA.Fill(dt);
+
+                foreach (DataRow dr in dt.Rows)
+                {
+                    listBox1.Items.Add(dr["Type"].ToString());
+                }
             }
-            listBox1.Items.Clear();
-            refreshLB();
 
-
-            string Query = "SELECT Type FROM Ingredients WHERE FoodCategory =" + "'" + listBox2.SelectedItem.ToString() + "'AND got = 0;";
-            DataTable dt = new DataTable();
-            SqlDataAdapter SDA = new SqlDataAdapter(Query, con);
-            SDA.SelectCommand.ExecuteNonQuery();
-            SDA.Fill(dt);
-
-            foreach (DataRow dr in dt.Rows)
-            {
-                listBox1.Items.Add(dr["Type"].ToString());
-            }
-
+            
 
             //string Query = "UPDATE Ingredients SET got = '1' WHERE Type = " + "'" + listBox1.SelectedItem.ToString() + "';";
 

@@ -186,7 +186,7 @@ namespace DesktopApp1
         {
             try
             {
-                var jPerson = JsonConvert.DeserializeObject<dynamic>(strJSON);
+                var jRecipe = JsonConvert.DeserializeObject<dynamic>(strJSON);
 
                 // Person jPerson = JsonConvert.DeserializeObject<dynamic>(strJSON);
                 string ignlist = null;
@@ -209,9 +209,9 @@ namespace DesktopApp1
                             //buffer set of list to order on % of ingredients
                            
 
-                            ignlist = ignlist + "\n" + jPerson.hits[Rnumber].recipe.ingredientLines[i];
-                            label1[Rnumber] = jPerson.hits[Rnumber].recipe.label;
-                            METHOD[Rnumber] = jPerson.hits[Rnumber].recipe.url;
+                            ignlist = ignlist + "\n" + jRecipe.hits[Rnumber].recipe.ingredientLines[i];
+                            label1[Rnumber] = jRecipe.hits[Rnumber].recipe.label;
+                            METHOD[Rnumber] = jRecipe.hits[Rnumber].recipe.url;
                             i++;
                         }
                         catch
@@ -384,7 +384,7 @@ namespace DesktopApp1
             int RanMeatFish = 0;
             int RanCuisines = 0;
 
-            RanMeatFish = rnd3.Next(0, listING.Count);
+            //RanMeatFish = rnd3.Next(0, listING.Count);
             //RanCuisines = rnd4.Next(0, aExclude.Length);
 
             
@@ -394,8 +394,14 @@ namespace DesktopApp1
                             { "Italian","basil", "butter", "garlic", "mushroom", "oregano", "parsley", "pasta", "prawns", "rosemary", "spaghetti", "thyme", "tomato" },
                             { "Indian","black pepper", "chilli", "cinnamon", "coriander", "cumin", "curry powder", "rice", "mint","chicken","mustard","turmeric","nutmeg" },
                             { "Mexican","avacado", /*"beans"*/"", "cumin", "garlic", "onion", "oregano", "paprika", "tortillas","coriander","lime","onion","corn" },
-                            { "Mediterranean","basil", "garlic", "olive oil", "oregano", "paprika", "parsley", "rosemary", "sage", "thyme", "tomato", "za'atar","lamb" }};
-            
+                            { "Mediterranean","basil", "garlic", "olive oil", "oregano", "paprika", "parsley", "rosemary", "sage", "thyme", "tomato", "za'atar","lamb" },
+                            { "Greek","mint","dill","cinnamon","allspice","oregano","","parsley","saffron","pepper","nutmeg","coriander","onion"},
+                            { "British","basil","chilli","oregano","coriander","ginger","rosemary","ketchup","paprika","parsley","cinnamon","thyme","onion"},
+                            { "German","nutmeg","caraway","paprika","allspice","mustard seed", "cinnamon","curry","dill","bay leaf","sage","celery","parsley"},
+                            { "Thai","basil","turmeric","lemongrass","chili powder","garlic", "onion","ginger","peppercorns","coriander","chinese five spice","lime","cumin"},
+                            { "Spanish","paprika","saffron","parsley","cayenne pepper","bay leaf", "olives","tomatoes","rosemary","peppercorns","onion","",""} };
+
+
             //MessageBox.Show(CC[5,0-11].Count().ToString());
 
             string[] Barbecue = {"bacon ", "BBQ sauce","cheese","corn","hot sauce","ketchup","lettuce","mustard","onion","ribs","tomatoes","wings"};
@@ -506,9 +512,16 @@ namespace DesktopApp1
                 con.Close();
             }
 
-            MessageBox.Show(ingr[0] + ingr[1]);
+            //check waht happens if exclude is null
+            string excludedFood = Properties.Settings.Default.Exclude.Replace(" ", "&excluded=");
 
-            string apiGet = string.Format("https://api.edamam.com/search?q=" + ingr[0] + "+" + ingr[1] + "&cuisineType=indian&excluded=garlic&app_id=32d7bc80&app_key=3ce2b8743eff32886ac3d5aa53ba1bec"/*+randomnumber*/);
+            string diet = Properties.Settings.Default.Diet.Replace(" ", "&diet=");
+
+            string cuisine = Properties.Settings.Default.Cuisines.Replace(" ", "&cuisineType=");
+             MessageBox.Show(ingr[0] + ingr[1]);
+            MessageBox.Show(cuisine);
+
+            string apiGet = string.Format("https://api.edamam.com/search?q=" + ingr[0] + "+" + ingr[1] + excludedFood + cuisine + "&cuisineType=indian&excluded=garlic&app_id=32d7bc80&app_key=3ce2b8743eff32886ac3d5aa53ba1bec" + diet /*+randomnumber*/);
             WebRequest requestObjGet = WebRequest.Create(apiGet);
             requestObjGet.Method = "GET";
             HttpWebResponse responceObjGet = null;

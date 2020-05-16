@@ -28,17 +28,20 @@ namespace DesktopApp1
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.ingrediendts1 = new DesktopApp1.Ingrediendts();
             this.favourites1 = new DesktopApp1.favourites();
             this.reccomended1 = new DesktopApp1.Reccomended();
             this.new1 = new DesktopApp1.New();
             this.metroPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // metroPanel1
@@ -107,13 +110,23 @@ namespace DesktopApp1
             this.button5.BackColor = System.Drawing.Color.Transparent;
             this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(12, 12);
+            this.button5.Location = new System.Drawing.Point(44, 12);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(138, 75);
             this.button5.TabIndex = 17;
             this.button5.Text = "Preferences";
             this.button5.UseVisualStyleBackColor = false;
             this.button5.Click += new System.EventHandler(this.button5_Click_1);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::DesktopApp1.Properties.Resources.food_1_;
+            this.pictureBox1.Location = new System.Drawing.Point(205, 71);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(689, 516);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox1.TabIndex = 18;
+            this.pictureBox1.TabStop = false;
             // 
             // ingrediendts1
             // 
@@ -150,6 +163,7 @@ namespace DesktopApp1
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.CausesValidation = false;
             this.ClientSize = new System.Drawing.Size(902, 587);
             this.Controls.Add(this.button5);
@@ -158,12 +172,16 @@ namespace DesktopApp1
             this.Controls.Add(this.favourites1);
             this.Controls.Add(this.reccomended1);
             this.Controls.Add(this.new1);
+            this.Controls.Add(this.pictureBox1);
+            this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Recipe Recommend";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.metroPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -180,6 +198,7 @@ namespace DesktopApp1
         private New new1;
         private Reccomended reccomended1;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

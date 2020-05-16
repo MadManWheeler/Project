@@ -238,6 +238,7 @@ namespace DesktopApp1
                 email.EnableSsl = true;
                 email.Credentials = new NetworkCredential("reciperecommenddmu@gmail.com", "7CTV!#&L\"V&LhLwr");//7CTV!#&L"V&LhLwr
 
+               
                 try
                 {
                     email.Send("reciperecommenddmu@gmail.com", Properties.Settings.Default.Email, "Missing Ingredients", sendM.ToString());
@@ -291,6 +292,11 @@ namespace DesktopApp1
         }
 
         private void richTextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
 
         }

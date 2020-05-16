@@ -242,30 +242,19 @@ namespace DesktopApp1
                             result[counter] = "";
 
                             check++;
-                        }
-
-
+                        } 
                     }
-
                 }
-
-
+                
                 double numLines = Form1.passingTxt[i].Split('\n').Length - 1;
                 orderRecipes[i, 1] = check / numLines;
                 // double f = (check/numLines);
                 // MessageBox.Show(check.ToString() + "/" + numLines);
                 con.Close();
-
             }
-
             sortedOrder = orderRecipes.OrderBy(x => x[1]);
             //Array.Sort(orderRecipes [0,0]);
-
-            for (int i = 0; i < 9; i++)
-            {
-
-            }
-
+            
 
             richTextBox1.Text = Form1.passingTxt[Convert.ToInt32(sortedOrder[19, 0])];
             newLabel1.Text = Form1.label1[Convert.ToInt32(sortedOrder[19, 0])];

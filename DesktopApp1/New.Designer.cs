@@ -84,10 +84,9 @@
             // 
             // newLabel1
             // 
-            this.newLabel1.AutoSize = true;
             this.newLabel1.Location = new System.Drawing.Point(21, 23);
             this.newLabel1.Name = "newLabel1";
-            this.newLabel1.Size = new System.Drawing.Size(57, 19);
+            this.newLabel1.Size = new System.Drawing.Size(203, 19);
             this.newLabel1.TabIndex = 12;
             this.newLabel1.Text = "Recipe 1";
             this.newLabel1.Click += new System.EventHandler(this.metroLabel1_Click);
@@ -103,10 +102,9 @@
             // 
             // newLabel2
             // 
-            this.newLabel2.AutoSize = true;
             this.newLabel2.Location = new System.Drawing.Point(237, 23);
             this.newLabel2.Name = "newLabel2";
-            this.newLabel2.Size = new System.Drawing.Size(57, 19);
+            this.newLabel2.Size = new System.Drawing.Size(203, 19);
             this.newLabel2.TabIndex = 16;
             this.newLabel2.Text = "Recipe 1";
             this.newLabel2.Click += new System.EventHandler(this.metroLabel4_Click);
@@ -122,10 +120,9 @@
             // 
             // newLabel3
             // 
-            this.newLabel3.AutoSize = true;
             this.newLabel3.Location = new System.Drawing.Point(455, 23);
             this.newLabel3.Name = "newLabel3";
-            this.newLabel3.Size = new System.Drawing.Size(57, 19);
+            this.newLabel3.Size = new System.Drawing.Size(203, 19);
             this.newLabel3.TabIndex = 20;
             this.newLabel3.Text = "Recipe 1";
             // 
@@ -140,10 +137,9 @@
             // 
             // newLabel6
             // 
-            this.newLabel6.AutoSize = true;
             this.newLabel6.Location = new System.Drawing.Point(455, 188);
             this.newLabel6.Name = "newLabel6";
-            this.newLabel6.Size = new System.Drawing.Size(57, 19);
+            this.newLabel6.Size = new System.Drawing.Size(203, 19);
             this.newLabel6.TabIndex = 32;
             this.newLabel6.Text = "Recipe 1";
             this.newLabel6.Click += new System.EventHandler(this.metroLabel8_Click);
@@ -160,10 +156,9 @@
             // 
             // newLabel5
             // 
-            this.newLabel5.AutoSize = true;
             this.newLabel5.Location = new System.Drawing.Point(237, 188);
             this.newLabel5.Name = "newLabel5";
-            this.newLabel5.Size = new System.Drawing.Size(57, 19);
+            this.newLabel5.Size = new System.Drawing.Size(203, 19);
             this.newLabel5.TabIndex = 28;
             this.newLabel5.Text = "Recipe 1";
             // 
@@ -178,10 +173,9 @@
             // 
             // newLabel4
             // 
-            this.newLabel4.AutoSize = true;
             this.newLabel4.Location = new System.Drawing.Point(21, 188);
             this.newLabel4.Name = "newLabel4";
-            this.newLabel4.Size = new System.Drawing.Size(57, 19);
+            this.newLabel4.Size = new System.Drawing.Size(203, 19);
             this.newLabel4.TabIndex = 24;
             this.newLabel4.Text = "Recipe 1";
             // 
@@ -196,10 +190,9 @@
             // 
             // newLabel9
             // 
-            this.newLabel9.AutoSize = true;
             this.newLabel9.Location = new System.Drawing.Point(455, 354);
             this.newLabel9.Name = "newLabel9";
-            this.newLabel9.Size = new System.Drawing.Size(57, 19);
+            this.newLabel9.Size = new System.Drawing.Size(203, 19);
             this.newLabel9.TabIndex = 44;
             this.newLabel9.Text = "Recipe 1";
             // 
@@ -214,10 +207,9 @@
             // 
             // newLabel8
             // 
-            this.newLabel8.AutoSize = true;
             this.newLabel8.Location = new System.Drawing.Point(237, 354);
             this.newLabel8.Name = "newLabel8";
-            this.newLabel8.Size = new System.Drawing.Size(57, 19);
+            this.newLabel8.Size = new System.Drawing.Size(203, 19);
             this.newLabel8.TabIndex = 40;
             this.newLabel8.Text = "Recipe 1";
             // 
@@ -232,10 +224,9 @@
             // 
             // newLabel7
             // 
-            this.newLabel7.AutoSize = true;
             this.newLabel7.Location = new System.Drawing.Point(21, 354);
             this.newLabel7.Name = "newLabel7";
-            this.newLabel7.Size = new System.Drawing.Size(57, 19);
+            this.newLabel7.Size = new System.Drawing.Size(203, 19);
             this.newLabel7.TabIndex = 36;
             this.newLabel7.Text = "Recipe 1";
             // 
@@ -390,7 +381,6 @@
             this.Size = new System.Drawing.Size(685, 583);
             this.Load += new System.EventHandler(this.New_Load_1);
             this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -50,9 +50,9 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(198, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(248, 55);
+            this.label1.Size = new System.Drawing.Size(221, 55);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Favourites";
+            this.label1.Text = "Favorites";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // projectDataSet
@@ -110,11 +110,13 @@
             // 
             // linkLabel1
             // 
-            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.AutoEllipsis = true;
             this.linkLabel1.Location = new System.Drawing.Point(6, 480);
             this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(0, 13);
+            this.linkLabel1.Size = new System.Drawing.Size(384, 16);
             this.linkLabel1.TabIndex = 13;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "Recipe Method";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // label2

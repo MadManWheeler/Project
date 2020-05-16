@@ -39,31 +39,22 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.checkBox7 = new System.Windows.Forms.CheckBox();
             this.richTextBox7 = new System.Windows.Forms.RichTextBox();
             this.newLabel9 = new MetroFramework.Controls.MetroLabel();
-            this.checkBox8 = new System.Windows.Forms.CheckBox();
             this.richTextBox8 = new System.Windows.Forms.RichTextBox();
             this.newLabel8 = new MetroFramework.Controls.MetroLabel();
-            this.checkBox9 = new System.Windows.Forms.CheckBox();
             this.richTextBox9 = new System.Windows.Forms.RichTextBox();
             this.newLabel7 = new MetroFramework.Controls.MetroLabel();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
             this.richTextBox4 = new System.Windows.Forms.RichTextBox();
             this.newLabel6 = new MetroFramework.Controls.MetroLabel();
-            this.checkBox5 = new System.Windows.Forms.CheckBox();
             this.richTextBox5 = new System.Windows.Forms.RichTextBox();
             this.newLabel5 = new MetroFramework.Controls.MetroLabel();
-            this.checkBox6 = new System.Windows.Forms.CheckBox();
             this.richTextBox6 = new System.Windows.Forms.RichTextBox();
             this.newLabel4 = new MetroFramework.Controls.MetroLabel();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
             this.richTextBox3 = new System.Windows.Forms.RichTextBox();
             this.newLabel3 = new MetroFramework.Controls.MetroLabel();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.richTextBox2 = new System.Windows.Forms.RichTextBox();
             this.newLabel2 = new MetroFramework.Controls.MetroLabel();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.newLabel1 = new MetroFramework.Controls.MetroLabel();
             this.button11 = new System.Windows.Forms.Button();
@@ -76,9 +67,9 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F);
             this.label1.Location = new System.Drawing.Point(182, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(336, 55);
+            this.label1.Size = new System.Drawing.Size(352, 55);
             this.label1.TabIndex = 102;
-            this.label1.Text = "Reccomended";
+            this.label1.Text = "Recommended";
             // 
             // groupBox1
             // 
@@ -91,31 +82,22 @@
             this.groupBox1.Controls.Add(this.button3);
             this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.checkBox7);
             this.groupBox1.Controls.Add(this.richTextBox7);
             this.groupBox1.Controls.Add(this.newLabel9);
-            this.groupBox1.Controls.Add(this.checkBox8);
             this.groupBox1.Controls.Add(this.richTextBox8);
             this.groupBox1.Controls.Add(this.newLabel8);
-            this.groupBox1.Controls.Add(this.checkBox9);
             this.groupBox1.Controls.Add(this.richTextBox9);
             this.groupBox1.Controls.Add(this.newLabel7);
-            this.groupBox1.Controls.Add(this.checkBox4);
             this.groupBox1.Controls.Add(this.richTextBox4);
             this.groupBox1.Controls.Add(this.newLabel6);
-            this.groupBox1.Controls.Add(this.checkBox5);
             this.groupBox1.Controls.Add(this.richTextBox5);
             this.groupBox1.Controls.Add(this.newLabel5);
-            this.groupBox1.Controls.Add(this.checkBox6);
             this.groupBox1.Controls.Add(this.richTextBox6);
             this.groupBox1.Controls.Add(this.newLabel4);
-            this.groupBox1.Controls.Add(this.checkBox3);
             this.groupBox1.Controls.Add(this.richTextBox3);
             this.groupBox1.Controls.Add(this.newLabel3);
-            this.groupBox1.Controls.Add(this.checkBox2);
             this.groupBox1.Controls.Add(this.richTextBox2);
             this.groupBox1.Controls.Add(this.newLabel2);
-            this.groupBox1.Controls.Add(this.checkBox1);
             this.groupBox1.Controls.Add(this.richTextBox1);
             this.groupBox1.Controls.Add(this.newLabel1);
             this.groupBox1.Location = new System.Drawing.Point(3, 52);
@@ -207,17 +189,6 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
-            // checkBox7
-            // 
-            this.checkBox7.AutoSize = true;
-            this.checkBox7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.checkBox7.Location = new System.Drawing.Point(605, 356);
-            this.checkBox7.Name = "checkBox7";
-            this.checkBox7.Size = new System.Drawing.Size(53, 17);
-            this.checkBox7.TabIndex = 227;
-            this.checkBox7.Text = "Show";
-            this.checkBox7.UseVisualStyleBackColor = true;
-            // 
             // richTextBox7
             // 
             this.richTextBox7.Location = new System.Drawing.Point(464, 395);
@@ -229,23 +200,11 @@
             // 
             // newLabel9
             // 
-            this.newLabel9.AutoSize = true;
             this.newLabel9.Location = new System.Drawing.Point(455, 354);
             this.newLabel9.Name = "newLabel9";
-            this.newLabel9.Size = new System.Drawing.Size(57, 19);
+            this.newLabel9.Size = new System.Drawing.Size(203, 19);
             this.newLabel9.TabIndex = 224;
             this.newLabel9.Text = "Recipe 1";
-            // 
-            // checkBox8
-            // 
-            this.checkBox8.AutoSize = true;
-            this.checkBox8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.checkBox8.Location = new System.Drawing.Point(387, 356);
-            this.checkBox8.Name = "checkBox8";
-            this.checkBox8.Size = new System.Drawing.Size(53, 17);
-            this.checkBox8.TabIndex = 223;
-            this.checkBox8.Text = "Show";
-            this.checkBox8.UseVisualStyleBackColor = true;
             // 
             // richTextBox8
             // 
@@ -258,23 +217,11 @@
             // 
             // newLabel8
             // 
-            this.newLabel8.AutoSize = true;
             this.newLabel8.Location = new System.Drawing.Point(237, 354);
             this.newLabel8.Name = "newLabel8";
-            this.newLabel8.Size = new System.Drawing.Size(57, 19);
+            this.newLabel8.Size = new System.Drawing.Size(203, 19);
             this.newLabel8.TabIndex = 220;
             this.newLabel8.Text = "Recipe 1";
-            // 
-            // checkBox9
-            // 
-            this.checkBox9.AutoSize = true;
-            this.checkBox9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.checkBox9.Location = new System.Drawing.Point(171, 356);
-            this.checkBox9.Name = "checkBox9";
-            this.checkBox9.Size = new System.Drawing.Size(53, 17);
-            this.checkBox9.TabIndex = 219;
-            this.checkBox9.Text = "Show";
-            this.checkBox9.UseVisualStyleBackColor = true;
             // 
             // richTextBox9
             // 
@@ -287,23 +234,11 @@
             // 
             // newLabel7
             // 
-            this.newLabel7.AutoSize = true;
             this.newLabel7.Location = new System.Drawing.Point(21, 354);
             this.newLabel7.Name = "newLabel7";
-            this.newLabel7.Size = new System.Drawing.Size(57, 19);
+            this.newLabel7.Size = new System.Drawing.Size(203, 19);
             this.newLabel7.TabIndex = 216;
             this.newLabel7.Text = "Recipe 1";
-            // 
-            // checkBox4
-            // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.checkBox4.Location = new System.Drawing.Point(605, 190);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(53, 17);
-            this.checkBox4.TabIndex = 215;
-            this.checkBox4.Text = "Show";
-            this.checkBox4.UseVisualStyleBackColor = true;
             // 
             // richTextBox4
             // 
@@ -316,23 +251,11 @@
             // 
             // newLabel6
             // 
-            this.newLabel6.AutoSize = true;
             this.newLabel6.Location = new System.Drawing.Point(455, 188);
             this.newLabel6.Name = "newLabel6";
-            this.newLabel6.Size = new System.Drawing.Size(57, 19);
+            this.newLabel6.Size = new System.Drawing.Size(203, 19);
             this.newLabel6.TabIndex = 212;
             this.newLabel6.Text = "Recipe 1";
-            // 
-            // checkBox5
-            // 
-            this.checkBox5.AutoSize = true;
-            this.checkBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.checkBox5.Location = new System.Drawing.Point(387, 190);
-            this.checkBox5.Name = "checkBox5";
-            this.checkBox5.Size = new System.Drawing.Size(53, 17);
-            this.checkBox5.TabIndex = 211;
-            this.checkBox5.Text = "Show";
-            this.checkBox5.UseVisualStyleBackColor = true;
             // 
             // richTextBox5
             // 
@@ -345,23 +268,11 @@
             // 
             // newLabel5
             // 
-            this.newLabel5.AutoSize = true;
             this.newLabel5.Location = new System.Drawing.Point(237, 188);
             this.newLabel5.Name = "newLabel5";
-            this.newLabel5.Size = new System.Drawing.Size(57, 19);
+            this.newLabel5.Size = new System.Drawing.Size(203, 19);
             this.newLabel5.TabIndex = 208;
             this.newLabel5.Text = "Recipe 1";
-            // 
-            // checkBox6
-            // 
-            this.checkBox6.AutoSize = true;
-            this.checkBox6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.checkBox6.Location = new System.Drawing.Point(171, 190);
-            this.checkBox6.Name = "checkBox6";
-            this.checkBox6.Size = new System.Drawing.Size(53, 17);
-            this.checkBox6.TabIndex = 207;
-            this.checkBox6.Text = "Show";
-            this.checkBox6.UseVisualStyleBackColor = true;
             // 
             // richTextBox6
             // 
@@ -374,23 +285,11 @@
             // 
             // newLabel4
             // 
-            this.newLabel4.AutoSize = true;
             this.newLabel4.Location = new System.Drawing.Point(21, 188);
             this.newLabel4.Name = "newLabel4";
-            this.newLabel4.Size = new System.Drawing.Size(57, 19);
+            this.newLabel4.Size = new System.Drawing.Size(203, 19);
             this.newLabel4.TabIndex = 204;
             this.newLabel4.Text = "Recipe 1";
-            // 
-            // checkBox3
-            // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.checkBox3.Location = new System.Drawing.Point(605, 25);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(53, 17);
-            this.checkBox3.TabIndex = 203;
-            this.checkBox3.Text = "Show";
-            this.checkBox3.UseVisualStyleBackColor = true;
             // 
             // richTextBox3
             // 
@@ -403,23 +302,11 @@
             // 
             // newLabel3
             // 
-            this.newLabel3.AutoSize = true;
             this.newLabel3.Location = new System.Drawing.Point(455, 23);
             this.newLabel3.Name = "newLabel3";
-            this.newLabel3.Size = new System.Drawing.Size(57, 19);
+            this.newLabel3.Size = new System.Drawing.Size(203, 19);
             this.newLabel3.TabIndex = 200;
             this.newLabel3.Text = "Recipe 1";
-            // 
-            // checkBox2
-            // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.checkBox2.Location = new System.Drawing.Point(387, 25);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(53, 17);
-            this.checkBox2.TabIndex = 199;
-            this.checkBox2.Text = "Show";
-            this.checkBox2.UseVisualStyleBackColor = true;
             // 
             // richTextBox2
             // 
@@ -432,23 +319,11 @@
             // 
             // newLabel2
             // 
-            this.newLabel2.AutoSize = true;
             this.newLabel2.Location = new System.Drawing.Point(237, 23);
             this.newLabel2.Name = "newLabel2";
-            this.newLabel2.Size = new System.Drawing.Size(57, 19);
+            this.newLabel2.Size = new System.Drawing.Size(203, 19);
             this.newLabel2.TabIndex = 196;
             this.newLabel2.Text = "Recipe 1";
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.checkBox1.Location = new System.Drawing.Point(171, 25);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(53, 17);
-            this.checkBox1.TabIndex = 195;
-            this.checkBox1.Text = "Show";
-            this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // richTextBox1
             // 
@@ -461,10 +336,9 @@
             // 
             // newLabel1
             // 
-            this.newLabel1.AutoSize = true;
             this.newLabel1.Location = new System.Drawing.Point(21, 23);
             this.newLabel1.Name = "newLabel1";
-            this.newLabel1.Size = new System.Drawing.Size(57, 19);
+            this.newLabel1.Size = new System.Drawing.Size(203, 19);
             this.newLabel1.TabIndex = 192;
             this.newLabel1.Text = "Recipe 1";
             // 
@@ -489,7 +363,6 @@
             this.Size = new System.Drawing.Size(685, 583);
             this.Load += new System.EventHandler(this.Reccomended_Load);
             this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -507,31 +380,22 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.CheckBox checkBox7;
         private System.Windows.Forms.RichTextBox richTextBox7;
         private MetroFramework.Controls.MetroLabel newLabel9;
-        private System.Windows.Forms.CheckBox checkBox8;
         private System.Windows.Forms.RichTextBox richTextBox8;
         private MetroFramework.Controls.MetroLabel newLabel8;
-        private System.Windows.Forms.CheckBox checkBox9;
         private System.Windows.Forms.RichTextBox richTextBox9;
         private MetroFramework.Controls.MetroLabel newLabel7;
-        private System.Windows.Forms.CheckBox checkBox4;
         private System.Windows.Forms.RichTextBox richTextBox4;
         private MetroFramework.Controls.MetroLabel newLabel6;
-        private System.Windows.Forms.CheckBox checkBox5;
         private System.Windows.Forms.RichTextBox richTextBox5;
         private MetroFramework.Controls.MetroLabel newLabel5;
-        private System.Windows.Forms.CheckBox checkBox6;
         private System.Windows.Forms.RichTextBox richTextBox6;
         private MetroFramework.Controls.MetroLabel newLabel4;
-        private System.Windows.Forms.CheckBox checkBox3;
         private System.Windows.Forms.RichTextBox richTextBox3;
         private MetroFramework.Controls.MetroLabel newLabel3;
-        private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.RichTextBox richTextBox2;
         private MetroFramework.Controls.MetroLabel newLabel2;
-        private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private MetroFramework.Controls.MetroLabel newLabel1;
         private System.Windows.Forms.Button button11;

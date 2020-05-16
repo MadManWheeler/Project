@@ -117,7 +117,7 @@ namespace DesktopApp1
 
         private void button3_Click(object sender, EventArgs e)
         {
-
+            //add if not null here plz 12/5/20
             //use one loop for this?
             
             string strselecteditems = null;
@@ -187,8 +187,11 @@ namespace DesktopApp1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            listBox4.Items.Add(textBox1.Text);
-            textBox1.Clear();
+            if (textBox1.Text != "")
+            {
+                listBox4.Items.Add(textBox1.Text);
+                textBox1.Clear();
+            }
 
             
         }
