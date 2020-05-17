@@ -128,27 +128,30 @@ namespace DesktopApp1
 
         private void button2_Click(object sender, EventArgs e)
         {
-            con.Open();
-            
-            using (SqlCommand cmd = new SqlCommand("UPDATE Ingredients SET got = '0' WHERE Type = " + "'" + listBox3.SelectedItem.ToString() + "';"))
+            if (listBox3.SelectedItem != null)
             {
-                cmd.CommandType = CommandType.Text;
-                cmd.Connection = con;
+                con.Open();
 
-                using (SqlDataReader sdr = cmd.ExecuteReader())
+                using (SqlCommand cmd = new SqlCommand("UPDATE Ingredients SET got = '0' WHERE Type = " + "'" + listBox3.SelectedItem.ToString() + "';"))
                 {
-                    sdr.Read();
-                    //richTextBox1.Text = sdr["Ingredients"].ToString();
-                    //linkLabel1.Text = sdr["Method"].ToString();
+                    cmd.CommandType = CommandType.Text;
+                    cmd.Connection = con;
+
+                    using (SqlDataReader sdr = cmd.ExecuteReader())
+                    {
+                        sdr.Read();
+                        //richTextBox1.Text = sdr["Ingredients"].ToString();
+                        //linkLabel1.Text = sdr["Method"].ToString();
+
+                    }
 
                 }
 
-            }
-            
-            
 
-            refreshLB();
-            con.Close();
+
+                refreshLB();
+                con.Close();
+            }
 
         }
 

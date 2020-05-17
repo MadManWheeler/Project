@@ -21,9 +21,6 @@ namespace DesktopApp1
 
     public partial class Form1 : Form
     {
-        public static string[] checkMethod = new string[20];
-        public static string[] checkLabel = new string[20];
-
         public static string[] passingTxt = new string[20];
         public static string[] label1 = new string[20];
         public static string[] METHOD = new string[20];
@@ -113,7 +110,7 @@ namespace DesktopApp1
                 i++;
             }
 
-            //why does this loop exsist 
+            
             for (int i = 0; i < 20; i++)
             {
 
@@ -168,21 +165,7 @@ namespace DesktopApp1
 
         }
 
-
-        //remove
-        public class Person
-        {
-            public string q { get; set; }
-            public System.Collections.ObjectModel.Collection<hit> hits { get; set; }
-
-        }
-
-        //remove
-        public class hit
-        {
-            public string label { get; set; }
-            public Array ingredientLines { get; set; }
-        }
+        
 
         private void deserialiseJSON(string strJSON)
         {
@@ -297,9 +280,10 @@ namespace DesktopApp1
                 }
 
 
-                //int r = rnd.Next(Ingrediendts.listING.Count);
+            //int r = rnd.Next(Ingrediendts.listING.Count);
 
-
+            try
+            {
                 //string apiGet = string.Format("https://api.edamam.com/search?q=" + array[ingr] + Ingrediendts.listING[r] + "&app_id=32d7bc80&app_key=3ce2b8743eff32886ac3d5aa53ba1bec");
                 string apiGet = string.Format("https://api.edamam.com/search?q=" + listING[ingr] + "+" + listING[ingr2] + "&app_id=32d7bc80&app_key=3ce2b8743eff32886ac3d5aa53ba1bec&to=30"/*+randomnumber*/);
                 WebRequest requestObjGet = WebRequest.Create(apiGet);
@@ -317,11 +301,12 @@ namespace DesktopApp1
 
                 deserialiseJSON(strresulttest);
                 //use json to pick random recipe
+            }
+            catch { MessageBox.Show("Uh Oh something went wrong!", "API Error"); }
 
 
 
 
-            
 
 
 
@@ -401,18 +386,14 @@ namespace DesktopApp1
                             { "British","basil","chilli","oregano","coriander","ginger","rosemary","ketchup","paprika","parsley","cinnamon","thyme","onion"},
                             { "German","nutmeg","caraway","paprika","allspice","mustard seed", "cinnamon","curry","dill","bay leaf","sage","celery","parsley"},
                             { "Thai","basil","turmeric","lemongrass","chili powder","garlic", "onion","ginger","peppercorns","coriander","chinese five spice","lime","cumin"},
-                            { "Spanish","paprika","saffron","parsley","cayenne pepper","bay leaf", "olives","tomatoes","rosemary","peppercorns","onion","",""} };
+                            { "Spanish","paprika","saffron","parsley","cayenne pepper","bay leaf", "olives","tomato","rosemary","peppercorns","onion","",""},
+                            {"Japanese","soy sauce","vinegar","rice","noodles","wasabi","mustard","sesame seed","curry","tofu","","","" },
+                             {"French","thyme","garlic","olive oil","rosemary","tomato","mustard","Herbes de provence","onion","oregano","","",""} };
 
 
             //MessageBox.Show(CC[5,0-11].Count().ToString());
 
-            string[] Barbecue = {"bacon ", "BBQ sauce","cheese","corn","hot sauce","ketchup","lettuce","mustard","onion","ribs","tomatoes","wings"};
-            string[] Caribbean = { "allspice", "pimento", "thyme", "scotch bonnet", "ginger", "garlic", "paprika", "rice", "chicken", "beef stock", "chicken stock" };
-            string[] Chinese = {"chinese 5 spice","garlic","ginger","oyster sauce","rice","sesame seed","soya sauce","pork","spring onion" };
-            string[] Italian = { "basil", "black pepper", "butter", "cheese", "garlic", "herbs de provence", "mushroom", "olive oil", "oregano", "parsley", "pasta", "prawns", "rosemary", "sage", "spaghetti", "thyme", "tomato"/*,"vadouvan"*/};
-            string[] Indian = {"black pepper", "chilli", "cinnamon", "coriander", "cumin", "curry powder", "rice", "mint" };
-            string[] Mexican = { "Avacado", "beans", "cumin", "garlic", "onion", "oregano", "paprika", "tortillas" };
-            string[] Mediterranean = { "basil", "garlic", "olive oil", "oregano", "paprika", "parsley", "rosemary", "sage", "thyme", "tomato", "za'atar" };
+       
 
             /*
             //add try catch
@@ -427,7 +408,7 @@ namespace DesktopApp1
 
 
 
-            //dont think i need this loop
+            
             for (int i = 0; i != 11; i++)
             {
                 Random rnd = new Random();
@@ -472,7 +453,6 @@ namespace DesktopApp1
                         }
 
                         ignCheck1 = true;
-                        //ingr[0] = Query;
                     }
 
                     catch
@@ -498,7 +478,6 @@ namespace DesktopApp1
                         }
 
                         ignCheck2 = true;
-                        //ingr[1] = Query;
                     }
 
 
@@ -531,25 +510,31 @@ namespace DesktopApp1
             { diet = ""; }
            
 
-            MessageBox.Show(ingr[0] + ingr[1]);
-            MessageBox.Show(cuisine);
+            //MessageBox.Show(ingr[0] + ingr[1]);
+            //MessageBox.Show(cuisine);
 
-            string apiGet = string.Format("https://api.edamam.com/search?q=" + ingr[0] + "+" + ingr[1] + excludedFood + cuisine + diet +"&app_id=32d7bc80&app_key=3ce2b8743eff32886ac3d5aa53ba1bec" +  alergies+ "&to=30" /*+randomnumber*/);
-            MessageBox.Show(apiGet);
-            WebRequest requestObjGet = WebRequest.Create(apiGet);
-            requestObjGet.Method = "GET";
-            HttpWebResponse responceObjGet = null;
-            responceObjGet = (HttpWebResponse)requestObjGet.GetResponse();
-
-            string strresulttest = null;
-            using (Stream stream = responceObjGet.GetResponseStream())
+            try
             {
-                StreamReader sr = new StreamReader(stream);
-                strresulttest = sr.ReadToEnd();
-                sr.Close();
-            }
+                string apiGet = string.Format("https://api.edamam.com/search?q=" + ingr[0] + "+" + ingr[1] + excludedFood + cuisine + diet + "&app_id=32d7bc80&app_key=3ce2b8743eff32886ac3d5aa53ba1bec" + alergies + "&to=30" /*+randomnumber*/);
+                //MessageBox.Show(apiGet);
+                WebRequest requestObjGet = WebRequest.Create(apiGet);
+                requestObjGet.Method = "GET";
+                HttpWebResponse responceObjGet = null;
+                responceObjGet = (HttpWebResponse)requestObjGet.GetResponse();
 
-            deserialiseJSON(strresulttest);
+                string strresulttest = null;
+                using (Stream stream = responceObjGet.GetResponseStream())
+                {
+                    StreamReader sr = new StreamReader(stream);
+                    strresulttest = sr.ReadToEnd();
+                    sr.Close();
+                }
+
+                deserialiseJSON(strresulttest);
+            }
+            catch { MessageBox.Show("Uh Oh something went wrong!", "API Error"); }
+            
+               
 
            
 

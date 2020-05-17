@@ -227,29 +227,32 @@ namespace DesktopApp1
                 SqlDataAdapter SDA = new SqlDataAdapter(Query, con);
                 SDA.SelectCommand.ExecuteNonQuery();
                 SDA.Fill(dt);
-                string TBE = richTextBox1.Text;
+                //string TBE = richTextBox1.Text;
 
                 double check = 0;
-                List<string> result = Form1.passingTxt[i].Split('\n').ToList();
-                foreach (DataRow dr in dt.Rows)
+                if (Form1.passingTxt[i] != null)
                 {
-
-                    for (int counter = 0; result.Count != counter; counter++)
+                    List<string> result = Form1.passingTxt[i].Split('\n').ToList();
+                    foreach (DataRow dr in dt.Rows)
                     {
 
-                        if (result[counter].Contains((dr["Type"].ToString())))
+                        for (int counter = 0; result.Count != counter; counter++)
                         {
-                            result[counter] = "";
 
-                            check++;
-                        } 
+                            if (result[counter].Contains((dr["Type"].ToString())))
+                            {
+                                result[counter] = "";
+
+                                check++;
+                            }
+                        }
                     }
+
+                    double numLines = Form1.passingTxt[i].Split('\n').Length - 1;
+                    orderRecipes[i, 1] = check / numLines;
+                    // double f = (check/numLines);
+                    // MessageBox.Show(check.ToString() + "/" + numLines);
                 }
-                
-                double numLines = Form1.passingTxt[i].Split('\n').Length - 1;
-                orderRecipes[i, 1] = check / numLines;
-                // double f = (check/numLines);
-                // MessageBox.Show(check.ToString() + "/" + numLines);
                 con.Close();
             }
             sortedOrder = orderRecipes.OrderBy(x => x[1]);

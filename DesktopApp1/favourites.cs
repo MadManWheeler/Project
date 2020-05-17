@@ -201,7 +201,7 @@ namespace DesktopApp1
             SqlDataAdapter SDA = new SqlDataAdapter(Query, con);
             SDA.SelectCommand.ExecuteNonQuery();
             SDA.Fill(dt);
-            string TBE = richTextBox1.Text;
+            //string TBE = richTextBox1.Text;
    
             int check = 0;
             List<string> result = richTextBox1.Text.Split('\n').ToList();
@@ -252,7 +252,7 @@ namespace DesktopApp1
             }
            
             int numLines = richTextBox1.Text.Split('\n').Length - 1;
-            MessageBox.Show(check.ToString()+"/"+numLines);
+            MessageBox.Show("You have: " + check.ToString()+"/"+numLines+" ingredients for this recipe","Recipe Recommend");
             con.Close();
 
             
@@ -269,20 +269,23 @@ namespace DesktopApp1
 
         private void button2_Click(object sender, EventArgs e)
         {
-            con.Open();
-            string Query = "DELETE FROM Recipes WHERE Label = " + "'" + listBox1.SelectedItem.ToString() + "';";
-            DataTable dt = new DataTable();
-            SqlDataAdapter SDA = new SqlDataAdapter(Query, con);
-            SDA.SelectCommand.ExecuteNonQuery();
-            SDA.Fill(dt);
-
-            foreach (DataRow dr in dt.Rows)
+            if (listBox1.SelectedItem != null)
             {
-                listBox1.Items.Add(dr["label"].ToString());
-            }
+                con.Open();
+                string Query = "DELETE FROM Recipes WHERE Label = " + "'" + listBox1.SelectedItem.ToString() + "';";
+                DataTable dt = new DataTable();
+                SqlDataAdapter SDA = new SqlDataAdapter(Query, con);
+                SDA.SelectCommand.ExecuteNonQuery();
+                SDA.Fill(dt);
 
-            con.Close();
-            RefreshDB();
+                foreach (DataRow dr in dt.Rows)
+                {
+                    listBox1.Items.Add(dr["label"].ToString());
+                }
+
+                con.Close();
+                RefreshDB();
+            }
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
