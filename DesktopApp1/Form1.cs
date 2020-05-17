@@ -33,6 +33,8 @@ namespace DesktopApp1
         public Form1()
         {
             InitializeComponent();
+            if (Properties.Settings.Default.Email == null || Properties.Settings.Default.Email == "")
+            {MessageBox.Show("Go to Settings to add your email, set any dietary requirements and select your favorite cuisine\n\nUse the ingredients page to add items to your kitchen and the New or Recommend page to find new recipes.\n\nOnce added new recipes can be found on the Favories page!", "How to use Resipe Recommend!"); }
             favourites1.Hide();
             ingrediendts1.Hide();
             new1.Hide();
@@ -514,14 +516,26 @@ namespace DesktopApp1
 
             //check waht happens if exclude is null
             string excludedFood = Properties.Settings.Default.Exclude.Replace(" ", "&excluded=");
-
             string diet = Properties.Settings.Default.Diet.Replace(" ", "&diet=");
-
+            string alergies = Properties.Settings.Default.Alergies.Replace(" ", "&health=");
             string cuisine = Properties.Settings.Default.Cuisines.Replace(" ", "&cuisineType=");
-             MessageBox.Show(ingr[0] + ingr[1]);
+
+            if (alergies.Contains("None"))
+            { alergies = ""; }
+            else {alergies = alergies + "-free"; }
+
+            if (excludedFood.Contains("None"))
+            { excludedFood = ""; }
+            
+            if (diet.Contains("None"))
+            { diet = ""; }
+           
+
+            MessageBox.Show(ingr[0] + ingr[1]);
             MessageBox.Show(cuisine);
 
-            string apiGet = string.Format("https://api.edamam.com/search?q=" + ingr[0] + "+" + ingr[1] + excludedFood + cuisine + "&cuisineType=indian&excluded=garlic&app_id=32d7bc80&app_key=3ce2b8743eff32886ac3d5aa53ba1bec" + diet /*+randomnumber*/);
+            string apiGet = string.Format("https://api.edamam.com/search?q=" + ingr[0] + "+" + ingr[1] + excludedFood + cuisine + diet +"&app_id=32d7bc80&app_key=3ce2b8743eff32886ac3d5aa53ba1bec" +  alergies+ "&to=30" /*+randomnumber*/);
+            MessageBox.Show(apiGet);
             WebRequest requestObjGet = WebRequest.Create(apiGet);
             requestObjGet.Method = "GET";
             HttpWebResponse responceObjGet = null;

@@ -55,7 +55,7 @@ namespace DesktopApp1
             con.Close();
         }
 
-        bool on = true; //add this in properly
+        
         private void label1_Click(object sender, EventArgs e)
         {
 

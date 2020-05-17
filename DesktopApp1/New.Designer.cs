@@ -84,7 +84,8 @@
             // 
             // newLabel1
             // 
-            this.newLabel1.Location = new System.Drawing.Point(21, 23);
+            this.newLabel1.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.newLabel1.Location = new System.Drawing.Point(21, 42);
             this.newLabel1.Name = "newLabel1";
             this.newLabel1.Size = new System.Drawing.Size(203, 19);
             this.newLabel1.TabIndex = 12;
@@ -102,7 +103,8 @@
             // 
             // newLabel2
             // 
-            this.newLabel2.Location = new System.Drawing.Point(237, 23);
+            this.newLabel2.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.newLabel2.Location = new System.Drawing.Point(237, 42);
             this.newLabel2.Name = "newLabel2";
             this.newLabel2.Size = new System.Drawing.Size(203, 19);
             this.newLabel2.TabIndex = 16;
@@ -120,7 +122,8 @@
             // 
             // newLabel3
             // 
-            this.newLabel3.Location = new System.Drawing.Point(455, 23);
+            this.newLabel3.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.newLabel3.Location = new System.Drawing.Point(455, 42);
             this.newLabel3.Name = "newLabel3";
             this.newLabel3.Size = new System.Drawing.Size(203, 19);
             this.newLabel3.TabIndex = 20;
@@ -137,7 +140,8 @@
             // 
             // newLabel6
             // 
-            this.newLabel6.Location = new System.Drawing.Point(455, 188);
+            this.newLabel6.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.newLabel6.Location = new System.Drawing.Point(455, 207);
             this.newLabel6.Name = "newLabel6";
             this.newLabel6.Size = new System.Drawing.Size(203, 19);
             this.newLabel6.TabIndex = 32;
@@ -156,7 +160,8 @@
             // 
             // newLabel5
             // 
-            this.newLabel5.Location = new System.Drawing.Point(237, 188);
+            this.newLabel5.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.newLabel5.Location = new System.Drawing.Point(237, 207);
             this.newLabel5.Name = "newLabel5";
             this.newLabel5.Size = new System.Drawing.Size(203, 19);
             this.newLabel5.TabIndex = 28;
@@ -173,7 +178,8 @@
             // 
             // newLabel4
             // 
-            this.newLabel4.Location = new System.Drawing.Point(21, 188);
+            this.newLabel4.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.newLabel4.Location = new System.Drawing.Point(21, 207);
             this.newLabel4.Name = "newLabel4";
             this.newLabel4.Size = new System.Drawing.Size(203, 19);
             this.newLabel4.TabIndex = 24;
@@ -190,7 +196,8 @@
             // 
             // newLabel9
             // 
-            this.newLabel9.Location = new System.Drawing.Point(455, 354);
+            this.newLabel9.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.newLabel9.Location = new System.Drawing.Point(455, 373);
             this.newLabel9.Name = "newLabel9";
             this.newLabel9.Size = new System.Drawing.Size(203, 19);
             this.newLabel9.TabIndex = 44;
@@ -207,7 +214,8 @@
             // 
             // newLabel8
             // 
-            this.newLabel8.Location = new System.Drawing.Point(237, 354);
+            this.newLabel8.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.newLabel8.Location = new System.Drawing.Point(237, 373);
             this.newLabel8.Name = "newLabel8";
             this.newLabel8.Size = new System.Drawing.Size(203, 19);
             this.newLabel8.TabIndex = 40;
@@ -224,7 +232,8 @@
             // 
             // newLabel7
             // 
-            this.newLabel7.Location = new System.Drawing.Point(21, 354);
+            this.newLabel7.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            this.newLabel7.Location = new System.Drawing.Point(21, 373);
             this.newLabel7.Name = "newLabel7";
             this.newLabel7.Size = new System.Drawing.Size(203, 19);
             this.newLabel7.TabIndex = 36;

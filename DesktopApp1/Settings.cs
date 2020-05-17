@@ -121,15 +121,19 @@ namespace DesktopApp1
             //use one loop for this?
             
             string strselecteditems = null;
-            for (int i = 0; i < listBox2.SelectedItems.Count; i++)
+            if (listBox2.Text != "")
             {
-                strselecteditems = strselecteditems + " " + listBox2.SelectedItems[i].ToString();
+                for (int i = 0; i < listBox2.SelectedItems.Count; i++)
+                {
+                    strselecteditems = strselecteditems + " " + listBox2.SelectedItems[i].ToString();
 
-                //Call the database function.
+                    //Call the database function.
+                }
+                Properties.Settings.Default.Cuisines = strselecteditems;
+                //MessageBox.Show(strselecteditems.ToString());
+                Properties.Settings.Default.Save();
             }
-            Properties.Settings.Default.Cuisines = strselecteditems;
-            MessageBox.Show(strselecteditems.ToString());
-            Properties.Settings.Default.Save();
+            else { MessageBox.Show("Please select at least one cuisine","Settings",MessageBoxButtons.OK, MessageBoxIcon.Exclamation); }
 
             strselecteditems = null;
             for (int i = 0; i < listBox1.SelectedItems.Count; i++)
@@ -139,7 +143,7 @@ namespace DesktopApp1
                 //Call the database function.
             }
             Properties.Settings.Default.Alergies = strselecteditems;
-            MessageBox.Show(strselecteditems.ToString());
+           // MessageBox.Show(strselecteditems.ToString());
             Properties.Settings.Default.Save();
 
             strselecteditems = null;
@@ -150,7 +154,7 @@ namespace DesktopApp1
                 //Call the database function.
             }
             Properties.Settings.Default.Diet = strselecteditems;
-            MessageBox.Show(strselecteditems.ToString());
+           // MessageBox.Show(strselecteditems.ToString());
             Properties.Settings.Default.Save();
 
 
@@ -159,20 +163,28 @@ namespace DesktopApp1
             //MessageBox.Show(Properties.Settings.Default.Exclude);
 
            strselecteditems = null;
-            for (int i = 0; i < listBox4.Items.Count; i++)
+            if (listBox4.Text != "")
             {
-                strselecteditems = strselecteditems + " " + listBox4.Items[i].ToString();
+                for (int i = 0; i < listBox4.Items.Count; i++)
+                {
+                    strselecteditems = strselecteditems + " " + listBox4.Items[i].ToString();
 
-                //Call the database function.
+                    //Call the database function.
+                }
+                Properties.Settings.Default.Exclude = strselecteditems;
+               // MessageBox.Show(strselecteditems.ToString());
+                Properties.Settings.Default.Save();
+            }   
+            else
+            {
+                Properties.Settings.Default.Exclude = "None";
+                Properties.Settings.Default.Save();
             }
-            Properties.Settings.Default.Exclude = strselecteditems;
-            MessageBox.Show(strselecteditems.ToString());
-            Properties.Settings.Default.Save();
 
+                Properties.Settings.Default.Email = textBox2.Text;
+
+                Properties.Settings.Default.Save();
             
-            Properties.Settings.Default.Email = textBox2.Text;
-            
-            Properties.Settings.Default.Save();
 
 
             //add try catch
@@ -204,6 +216,11 @@ namespace DesktopApp1
         }
 
         private void Settings_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

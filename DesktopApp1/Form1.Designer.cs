@@ -101,7 +101,7 @@ namespace DesktopApp1
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(183, 78);
             this.button1.TabIndex = 2;
-            this.button1.Text = "Favourites";
+            this.button1.Text = "Favorites";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -110,9 +110,9 @@ namespace DesktopApp1
             this.button5.BackColor = System.Drawing.Color.Transparent;
             this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(44, 12);
+            this.button5.Location = new System.Drawing.Point(12, 12);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(138, 75);
+            this.button5.Size = new System.Drawing.Size(133, 63);
             this.button5.TabIndex = 17;
             this.button5.Text = "Preferences";
             this.button5.UseVisualStyleBackColor = false;

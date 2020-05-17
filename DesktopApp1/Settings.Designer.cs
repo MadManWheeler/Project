@@ -55,16 +55,16 @@
             this.listBox1.Items.AddRange(new object[] {
             "None",
             "Dairy",
-            "Eggs",
-            "Nuts",
-            "Seafood",
+            "Egg",
+            "Tree-Nut",
+            "Shellfish",
             "Soy",
             "Wheat"});
             this.listBox1.Location = new System.Drawing.Point(19, 16);
             this.listBox1.Name = "listBox1";
-            this.listBox1.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
             this.listBox1.Size = new System.Drawing.Size(200, 95);
             this.listBox1.TabIndex = 0;
+            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // groupBox1
             // 
